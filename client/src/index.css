@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+.topBar{
+  width: 100%;
+  height: 80px;
+  display: flex;
+}
+.menus{
+  width: 70%;
+  background-color: #ecd5ec;
+}
+.loginBx{
+  width: 30%;
+  background-color: aqua;
+}
+.loginBx>div{
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}

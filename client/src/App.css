@@ -48,12 +48,97 @@
    outline: none;
 }
 .inputBx>button{
+   cursor: pointer;
+   font-family:'bitbit';
    border: none;
-   background-color: rgb(63, 214, 164);
+   background-color: rgb(79, 218, 153);
    border-top-right-radius: 2px;
    border-bottom-right-radius: 2px;
-   color: rgb(14, 122, 63);
+   color: green;
    height: 40px;
    width: 55px;
+}
+
+.Charlist{
+   width: 100%;
+   min-height: 650px;
+   padding: 1rem 2rem;
+}
+.srcn{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 1.2em;
+}
+.scon{
+   background-color: rgba(196, 196, 196, 0.692);
+   height: 310px;
+   border-radius: 1rem;
+}
+.seh_abata{
+   width: 100%;
+   height: 180px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+.seh_abata>img{
+   margin-top: -3rem;
+}
+.seh_sever{
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+.seh_sever>.sev{
+   height: 30px;
+   line-height: 30px;
+   display: inline-block;
+   background-color: rgba(0, 0, 0, 0.35);
+   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.35);
+   border-radius: 2px;
+   font-size: small;
+   text-align: center;
+   font-weight: 600;
+}
+.seh_sever>.server{
+   width: 40px;
+   color: rgb(238, 238, 238);
+}
+.seh_sever>.jobs{
+   min-width: 80px;
+   color: #fff;
+}
+.seh_name{
+   width: 100%;
+   height: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.seh_name>.name{
+   width: 50%;
+   height: 60%;
+   text-align: center;
+}
+.seh_name>.name>.introd{
+   display: block;
+   text-align: center;
+}
+.seh_name>.name>.adv{
+   font-size: small;
+   height: 30%;
+}
+.seh_name>.name>.nick{    
+   font-weight: 600;
+   height: 70%;
+   line-height: 25pt;
+}
+.seh_name>.level{
+   height: 40%;
 }
 /******************INDEX PAGE*******************/
