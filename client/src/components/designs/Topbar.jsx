@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Topbar() {
     return (
@@ -14,6 +14,7 @@ function Topbar() {
             <div className='loginBx'>
                 <div>Login</div>
                 <div>Register</div>
+                {/* <div class="lds-dual-ring"></div> */}
             </div>
         </div>
     )
