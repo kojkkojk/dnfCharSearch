@@ -19,13 +19,18 @@ router.get("/", async (req, res, next) => {
 router.get("/details", async (req, res, next) => {
    let charData = req.query;
    let obj = {}
-   try {      
+   try {
       await Promise.all([
+         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/status?apikey=${neoplrAPI.apiKey}`)
+            .then(res => obj.status = res.data),
          axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/equip/equipment?apikey=${neoplrAPI.apiKey}`)
-            .then((response) => { obj.equps = response.data.equipment}),
-         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/status?apikey=${neoplrAPI.apiKey}`).then((res)=>{
-           obj.status = res.data
-         })
+            .then(res => obj.equps = res.data.equipment),
+         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/equip/avatar?apikey=${neoplrAPI.apiKey}`)
+            .then(res => obj.avatar = res.data.avatar),
+         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/equip/creature?apikey=${neoplrAPI.apiKey}`)
+            .then(res => obj.creature = res.data.creature),
+         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/equip/talisman?apikey=${neoplrAPI.apiKey}`)
+            .then(res => obj.talismans = res.data.talismans),
       ])
    } catch (error) {
       next(error)
