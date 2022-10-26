@@ -8,6 +8,6 @@ let charRouter = require("./routes/char");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use("/char",charRouter)
+app.use("/api/char",charRouter)
 
 http.listen(port, () => {console.log('listening on ' + port)}); 

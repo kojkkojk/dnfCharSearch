@@ -9,7 +9,7 @@ function Index() {
   const dispatch = useDispatch();
 
   const shootApi = async () => {
-    await axios.get('/char', { params: { charName: charName } }).then(res => {
+    await axios.get('/api/char', { params: { charName: charName } }).then(res => {
       let data = res.data
       if (!data.rows) {
         alert("API 서버에 문제가 있습니다.")

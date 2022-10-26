@@ -8,9 +8,7 @@ router.get("/", async (req, res, next) => {
    let enCode = encodeURI(charNames.charName);
    try {
       await axios.get(`${neoplrAPI.firstURL}/servers/all/characters?characterName=${enCode}&limit=100&wordType=full&apikey=${neoplrAPI.apiKey}`)
-         .then((response) => {
-            res.send(response.data);
-         })
+         .then((response) => {res.send(response.data)})
    } catch (error) {
       next(error)
    }
