@@ -153,3 +153,88 @@
    font-weight: 600;
 }
 /******************INDEX PAGE*******************/
+/***************charInfos_Page******************/
+.charInfos_Page{
+   width: 1200px;
+   margin: 0 auto;
+}
+.charInfos_Page>.tovws{
+   width: 100%;
+   display: flex;
+   padding: 15px;
+}
+.charInfoSelect{
+   width: 40%;
+   height: 100%;
+}
+.charImg{
+   position: relative;
+   width: 100%;
+   height: 450px;
+   overflow: hidden;
+   text-align: center;
+   background-image: url("https://static.dnf-universe.com/source/2022/05/68ee13eb-4366-4de1-8faa-71ccbc12452b.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 5px;
+}
+.yposc{
+   position: absolute;
+   z-index: 999;
+   width: 100%;
+   height: 55px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1.75em;
+}
+.yposc>span{
+   display: inline-block;
+   height: 40px;
+   line-height: 38px;
+   background-color: rgba(243, 233, 233, 0.808);
+}
+.charImg>.yposc>span:nth-child(1){
+   width: 75px;
+}
+.charImg>.yposc>span:nth-child(2){
+   width: 120px;
+   font-size: large;
+   font-weight: 700;
+}
+.charImg>img{
+   width: 80%;
+   margin-top: -5px;
+}
+.selectBtn{
+   width: 100%;
+   padding-top: 5px;
+   height: calc(100% - 450px);
+}
+.selectBtn>ul{
+   list-style: none;
+}
+.selectBtn>ul>li{
+   border: 1px solid #999;
+   width: 80%;
+   height: 40px;
+   margin: 10px 0 0 0;
+   transition: linear 0.25s;
+   cursor: pointer;
+   padding-left: 15px;
+   line-height: 37px;
+   border-radius: 2px;
+}
+.selectBtn>ul>li:hover{
+   margin-left:40px;
+}
+.selectBtn>ul>.selected_menu{
+   margin-left:40px;
+}
+.statusWindow{
+   border: 1px solid blue;
+   width: 60%;
+   min-height: 100vh;
+}
+/***************charInfos_Page******************/

@@ -1,13 +1,10 @@
 import React from 'react';
 import { serverList } from "../../configs/server";
-import { useSelector, useDispatch } from 'react-redux';
-import { setCharInfos } from '../../redux/reducer/charSearch';
-import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
 function Charlist() {
     const charList = useSelector((state => state.charSearch.charList));
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
 
 return (
     <div className="Charlist">
@@ -16,13 +13,9 @@ return (
                 charList.map((data, index) => (
                     <div className="scon" name={data.characterName} key={index}>
                         <div className="seh_abata">
-                            {/* <Link to={`/status/${data.characterId}`}> */}
-                            <img alt="char" src={`https://img-api.neople.co.kr/df/servers/${data.serverId}/characters/${data.characterId}?zoom=1`}
-                            onClick={()=>{
-                                dispatch(setCharInfos({server:data.serverId,charId:data.characterId}))
-                                navigate(`/status/${data.characterName}`);
-                            }}
-                            />
+                        <Link to={`/status?server=${data.serverId}&id=${data.characterId}`}>
+                        <img alt="char" src={`https://img-api.neople.co.kr/df/servers/${data.serverId}/characters/${data.characterId}?zoom=1`}/>
+                        </Link>
                         </div>
                         <div className="seh_sever">
                             <span className="sev server">{serverList[data.serverId]}</span>

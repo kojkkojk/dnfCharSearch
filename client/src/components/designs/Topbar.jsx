@@ -14,7 +14,6 @@ function Topbar() {
             <div className='loginBx'>
                 <div>Login</div>
                 <div>Register</div>
-                {/* <div class="lds-dual-ring"></div> */}
             </div>
         </div>
     )

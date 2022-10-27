@@ -6,15 +6,13 @@ import CharInfos from './components/page/CharInfos';
 function App() {
   return (
     <>
-    <Topbar/>
-    <div className='App'>
-      <Routes>
-        <Route path='/' element={<Index />} />
-        <Route path='/status'>
-          <Route path=":id" element={<CharInfos />} />          
-        </Route>
-      </Routes>
-    </div>
+      <Topbar />
+      <div className='App'>
+        <Routes>
+          <Route path='/' element={<Index />} />
+          <Route path="/status" element={<CharInfos />} />
+        </Routes>
+      </div>
     </>
   );
 }

@@ -33,6 +33,6 @@ router.get("/details", async (req, res, next) => {
    } catch (error) {
       next(error)
    }
-   console.log(obj);
+   res.send(obj)
 })
 module.exports = router;
