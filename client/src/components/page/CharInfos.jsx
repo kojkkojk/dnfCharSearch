@@ -41,7 +41,7 @@ function CharInfos() {
               <span>{serverList[server]}</span>
               <span>{charStatus0.characterName ? charStatus0.characterName : "loading.."}</span>
             </div>
-            <img src={`https://img-api.neople.co.kr/df/servers/bakal/characters/${id}?zoom=2`} alt="char_img" />
+            <img src={`https://img-api.neople.co.kr/df/servers/${server}/characters/${id}?zoom=2`} alt="char_img" />
           </div>
           <div className="selectBtn">
             <ul>
@@ -60,9 +60,10 @@ function CharInfos() {
         </div>
         <div className="statusWindow">
           <div className="other_spec">
-            <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : "loading..."}</span></div>
-            <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : "loading..."}</span></div>
-            <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : "loading..."}</span></div>
+            <div><span>직&nbsp;&nbsp;업</span><span>{charStatus0.jobGrowName ? charStatus0.jobGrowName : ""}</span></div>
+            <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
+            <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
+            <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>

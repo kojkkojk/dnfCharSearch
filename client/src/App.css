@@ -25,6 +25,16 @@
    background-position: left;
    background-repeat: no-repeat;
    background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   font-size: 65pt;
+   font-family:'bitbit';
+}
+.bannerIMG>h3>span{
+   display: inline-block;
+   width: 110px;
 }
 .inputBx{
    width: 100%;
@@ -161,6 +171,7 @@
 .charInfos_Page>.tovws{
    width: 100%;
    display: flex;
+   gap: 0.7rem;
    padding: 15px;
 }
 .charInfoSelect{
@@ -178,6 +189,9 @@
    background-repeat: no-repeat;
    background-size: cover;
    border-radius: 5px;
+   border-top: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.35);
 }
 .yposc{
    position: absolute;
@@ -216,15 +230,20 @@
    list-style: none;
 }
 .selectBtn>ul>li{
+   font-family:'bitbit';
    border: 1px solid #999;
    width: 80%;
-   height: 40px;
+   height: 45px;
    margin: 10px 0 0 0;
    transition: linear 0.25s;
    cursor: pointer;
    padding-left: 15px;
-   line-height: 37px;
+   font-size: 14pt;
+   line-height: 42px;
    border-radius: 2px;
+   border-top: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.35);
 }
 .selectBtn>ul>li:hover{
    margin-left:40px;
@@ -252,7 +271,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: 20%;
+   width: calc(20% - 5px);
    border-radius: 2px;
    border-top: 1px solid lightgray;
    border-left: 1px solid lightgray;
@@ -266,6 +285,7 @@
 .other_spec>div>span:nth-child(1){
    font-family:'bitbit';
    line-height: 42px;
+   font-size: 12pt;
 }
 .other_spec>div>span:nth-child(2){
    font-size: 14pt;
@@ -282,8 +302,6 @@
    margin-bottom: 1rem;
 }
 /***************charInfos_Page******************/
-.itemList{
-}
 .item{
    width: 100%;
    border-radius: 2px;
@@ -294,16 +312,56 @@
    height: 70px;
    display: flex;
 }
-.itemName{
+.itemImg{
    width: 45px;
    background-color: #e5dde5;
    display: flex;
    flex-direction: column;
+   position: relative;
 }
-.itemName>span{
+.upgradeTrue{
+   position: absolute;
+   width: 45px;
+   height: 45px;   
+   background-image: url("https://firebasestorage.googleapis.com/v0/b/thorarcv.appspot.com/o/siroco.gif?alt=media&token=62f73d4a-575b-4ae5-8ab2-6fc1da0085e3");
+   opacity: 0.55;
+   background-size: cover;
+}
+.itemImg>span{
    height: 25px;
    font-size: small;
    font-family:'bitbit';
    line-height: 23px;
    text-align: center;
+}
+.itemName{
+   width: 82%;
+   height: 100%;
+   display: flex;
+}
+.iNames{
+   width: 75%;
+   height: 100%;
+}
+.opggisgood{
+   text-align: center;
+   height: 50%;
+   line-height: 32px;
+   font-size: large;
+}
+.fowisnotgood{
+   height: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.fowisnotgood>span{
+   display: inline-block;
+   font-size: small;
+   text-align: center;
+   width: 100%;
+   font-weight: 600;
+}
+.upgradePick{
+   color: rgb(165, 0, 190);
 }

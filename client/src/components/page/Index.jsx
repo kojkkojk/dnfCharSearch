@@ -6,7 +6,12 @@ import { setCharList as setCharList_redux } from '../../redux/reducer/charSearch
 function Index() {
   const [charName, setCharName] = useState("");
   const typingCharName = (e) => { setCharName(e.target.value) };
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();   
+  const fillters = (elements) => {
+    if (elements.level === 110) {
+       return true;
+    }
+ }
 
   const shootApi = async () => {
     await axios.get('/api/char', { params: { charName: charName } }).then(res => {
@@ -14,7 +19,9 @@ function Index() {
       if (!data.rows) {
         alert("API 서버에 문제가 있습니다.")
       } else {
-        dispatch(setCharList_redux(data.rows))
+        let filArr = data.rows;
+        let fillArr2 = filArr.filter(fillters)
+        dispatch(setCharList_redux(fillArr2))
       }
     }).catch(err => console.log(err))
   }
@@ -41,7 +48,7 @@ function Index() {
       <div className='searchBox'>
         <div className="banners">
           <div className="bannerIMG" style={{ backgroundImage: "url(https://developers.neople.co.kr/img/svisual_df.jpg)" }}>
-            <h3>A/DC.GG</h3>
+            <h3><span>D</span><span>F</span><span>G</span><span>G</span></h3>
           </div>
         </div>
         <div className="inputBx">
