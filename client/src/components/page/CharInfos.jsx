@@ -10,6 +10,7 @@ function CharInfos() {
   const [charStatus1, setCharStatus1] = useState([]);
   const [charStatus2, setCharStatus2] = useState([]);
   const [charStatus3, setCharStatus3] = useState([]);
+  const [charStatus4, setCharStatus4] = useState([]);
   const [infos_selected, setInfos_selected] = useState("장착 아이템");
   const server = searchParams.get('server');
   const id = searchParams.get('id');
@@ -21,6 +22,7 @@ function CharInfos() {
       setCharStatus1(datas.equps)
       setCharStatus2(datas.avatar)
       setCharStatus3(datas.talismans)
+      setCharStatus4(datas.creature)
     }).catch(err => console.log(err))
   }
   const selection2 = (arr, list) => {
@@ -64,6 +66,8 @@ function CharInfos() {
             <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
+            <div><span>나&nbsp;&nbsp;비&nbsp;&nbsp;탕&nbsp;&nbsp;?</span>
+            <span>{charStatus4.itemName ? charStatus4.itemName === "순백의 나비 공주" ? "O": "X":""}</span></div>
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>

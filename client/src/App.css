@@ -271,7 +271,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   width: calc(20% - 5px);
+   width: calc(20% - 2px);
    border-radius: 2px;
    border-top: 1px solid lightgray;
    border-left: 1px solid lightgray;
@@ -343,25 +343,54 @@
    width: 75%;
    height: 100%;
 }
-.opggisgood{
+   .opggisgood{
+      text-align: center;
+      height: 60%;
+      line-height: 35px;
+      font-size: large;
+      border-bottom: 1px solid lightgrey;
+   }
+   .fowisnotgood{
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .fowisnotgood>span{
+      display: inline-block;
+      font-size: small;
+      text-align: center;
+      width: 100%;
+      font-weight: 600;
+   }
+   .upgradePick{
+      color: rgb(165, 0, 190);
+   }
+.iLevels{
+   width: 25%;
+   height: 100%;
+}
+.iLevels>div{
    text-align: center;
-   height: 50%;
    line-height: 32px;
-   font-size: large;
 }
-.fowisnotgood{
-   height: 50%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.fowisnotgood>span{
-   display: inline-block;
-   font-size: small;
-   text-align: center;
-   width: 100%;
+.total_grow{
+   font-size: larger;
    font-weight: 600;
+   height: 60%;
+   border-bottom: 1px solid lightgrey;
 }
-.upgradePick{
-   color: rgb(165, 0, 190);
+.grow_lv{
+   font-size: small;
+}
+.total_grow_240,.차원의{
+   color: rgb(135, 10, 160);
+}
+.ref{
+   width: calc(18% - 45px);
+   height: 100%;
+   line-height: 67px;
+   text-align: center;
+   border-left: 1px solid lightgrey;
+   font-size: 1.35em;
 }

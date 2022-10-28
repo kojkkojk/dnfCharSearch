@@ -30,10 +30,17 @@ function Item(props) {
                   </div>
                 </div>
                 <div className='iLevels'>
-                  {!data.growInfo ? <></> : <span className='ech2'> {data.growInfo.options.map((optLevel, index) => (
-                    <React.Fragment key={index}>{optLevel.level} </React.Fragment>))}
-                    ({data.growInfo.options[0].level + data.growInfo.options[1].level + data.growInfo.options[2].level + data.growInfo.options[3].level})
-                  </span>}
+                  {!data.growInfo ? <></> : 
+                  <>
+                    <div className={
+                      data.growInfo.options[0].level + data.growInfo.options[1].level + data.growInfo.options[2].level + data.growInfo.options[3].level >= 240 ?
+                      `total_grow_240 total_grow` : `total_grow total_grow_lv`}>
+                    {data.growInfo.options[0].level + data.growInfo.options[1].level + data.growInfo.options[2].level + data.growInfo.options[3].level}
+                    </div>
+                    <div className='grow_lv'>
+                    {data.growInfo.options.map((optLevel, index) => (<span key={index}>{optLevel.level} </span>))}
+                    </div>
+                  </>}
                 </div>
               </div>
               <div className="ref">
