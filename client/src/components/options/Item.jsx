@@ -19,13 +19,16 @@ function Item(props) {
                   <div className='fowisnotgood'>
                     {data.upgradeInfo ? <span className='upgradePick'>{data.upgradeInfo.itemName}</span> : <></>}
                     <span className='ech'>
-                      {data.enchant ? <>{data.enchant.status && !data.enchant.explain && !data.enchant.reinforceSkill ?
+                      {data.enchant ? 
+                      <>{data.enchant.status && !data.enchant.explain && !data.enchant.reinforceSkill ?
                         data.enchant.status.length > 0 && data.enchant.status.map((enchant, index) => (
-                          <React.Fragment key={index}>{fillterString(enchant.name)} {enchant.value} </React.Fragment>)) :
-                        !data.enchant.status && data.enchant.explain && !data.enchant.reinforceSkill ?
-                          `${data.enchant.explain}` : !data.enchant.status && !data.enchant.explain && data.enchant.reinforceSkill ?
-                            `${data.enchant.reinforceSkill[0].skills[0].name} +${data.enchant.reinforceSkill[0].skills[0].value} ` : ""
-                      }</> : ""}
+                          <React.Fragment key={index}>{fillterString(enchant.name)} +{enchant.value} </React.Fragment>)) :
+                        data.enchant.status && data.enchant.explain && !data.enchant.reinforceSkill ?
+                          `${data.enchant.explain}`: 
+                        !data.enchant.status && !data.enchant.explain && data.enchant.reinforceSkill ?
+                          `${data.enchant.reinforceSkill[0].skills[0].name} +${data.enchant.reinforceSkill[0].skills[0].value} ` : ""}
+                      </>
+                      :""}
                     </span>
                   </div>
                 </div>

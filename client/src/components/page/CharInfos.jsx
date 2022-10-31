@@ -3,6 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import axios from 'axios';
 import { serverList } from "../../configs/server";
 import Item from '../options/Item';
+import Stats from '../options/Stats';
+import Avatar from '../options/Avatar';
 
 function CharInfos() {
   const [searchParams] = useSearchParams();
@@ -67,17 +69,19 @@ function CharInfos() {
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
             <div><span>나&nbsp;&nbsp;비&nbsp;&nbsp;탕&nbsp;&nbsp;?</span>
-            <span>{charStatus4.itemName ? charStatus4.itemName === "순백의 나비 공주" ? "O": "X":""}</span></div>
+            {charStatus4 === null ? <span>크리처 없음</span> : 
+            <span>{charStatus4.itemName ? charStatus4.itemName === "순백의 나비 공주" ? "O": "X":""}</span>}
+          </div>
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>
-            {infos_selected === "장착 아이템" ? <Item list={charStatus1} /> :
-              infos_selected === "스탯" ? "스탯" :
-                infos_selected === "아바타" ? "아바타" :
-                  infos_selected === "탈리스만" ? "탈리스만" :
-                    infos_selected === "버프강화" ? "버프강화" :
-                      ""
-            }
+          { infos_selected === "장착 아이템" ? <Item list={charStatus1} /> :
+            infos_selected === "스탯" ? <Stats list={charStatus0.status} /> :
+            infos_selected === "아바타" ? <Avatar list={charStatus2} /> :
+            infos_selected === "탈리스만" ? "탈리스만" :
+            infos_selected === "버프강화" ? "버프강화" :
+            ""
+          }
           </div>
         </div>
       </div>
