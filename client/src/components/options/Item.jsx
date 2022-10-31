@@ -2,6 +2,13 @@ import React from 'react';
 import { fillterString } from '../../configs/fillter';
 function Item(props) {
   const list = props.list
+  const lol = (arr)=>{
+    let a = "";
+    arr.forEach(element => {
+      a += `${element.name} +${element.value} `;
+    });
+    return a
+  }
   return (
     <div className='itemList'>
       {list.length > 0 ?
@@ -24,8 +31,8 @@ function Item(props) {
                         data.enchant.status.length > 0 && data.enchant.status.map((enchant, index) => (
                           <React.Fragment key={index}>{fillterString(enchant.name)} +{enchant.value} </React.Fragment>)) :
                         data.enchant.status && data.enchant.explain && !data.enchant.reinforceSkill ?
-                          `${data.enchant.explain}`: 
-                        !data.enchant.status && !data.enchant.explain && data.enchant.reinforceSkill ?
+                          `${data.enchant.explain} ${fillterString(lol(data.enchant.status))}`:
+                          !data.enchant.status && !data.enchant.explain && data.enchant.reinforceSkill ?
                           `${data.enchant.reinforceSkill[0].skills[0].name} +${data.enchant.reinforceSkill[0].skills[0].value} ` : ""}
                       </>
                       :""}
