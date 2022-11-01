@@ -181,7 +181,7 @@
    padding: 15px;
 }
 .charInfoSelect{
-   width: 40%;
+   width: 35%;
    height: 100%;
 }
 .charImg{
@@ -224,7 +224,7 @@
    font-weight: 700;
 }
 .charImg>img{
-   width: 80%;
+   width: 90%;
    margin-top: -5px;
 }
 .selectBtn{
@@ -258,7 +258,7 @@
    margin-left:40px;
 }
 .statusWindow{
-   width: 60%;
+   width: 65%;
    min-height: 100vh;
    padding: 0 8px;
 }
@@ -391,9 +391,6 @@
 .grow_lv{
    font-size: small;
 }
-.total_grow_240,.차원의{
-   color: rgb(135, 10, 160);
-}
 .ref{
    width: calc(18% - 45px);
    height: 100%;
@@ -437,39 +434,81 @@
 .Avatar{
    width: 100%;
 }
-.item2{
+.avatars{
    display: flex;
-   justify-content: center;
-   align-items: center;
    width: 100%;
-   height: 80px;
-   margin-bottom: .45em;
+   height: 70px;
+   margin-bottom: .75em;
    border-radius: 2px;
    border-top: 1px solid lightgray;
    border-left: 1px solid lightgray;
    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.35);
 }
-.equipTem{
-   width: 50px;
+.avatarsImg{
+   width: 45px;
    height: 100%;
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   background-color: lightgray;
 }
-.equipTem>img{
-   width: 45px;
+.avatarsName{
+   width: 45%;
+   height: 100%;
+   border-right: 1px lightgrey solid;
+}
+.emblemst{
+   width: 27%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.avatarsA{
+   width: calc(28% - 45px);
+}
+.avatarsImg>img{
+   width: 100%;
    height: 45px;
 }
-.equipTem>span{
+.avatarsImg>span{
+   width: 100%;
    height: 25px;
+   text-align: center;
    font-size: small;
    font-family: 'bitbit';
    line-height: 23px;
-   text-align: center;
 }
-.avatarName{
-   width: calc(100% - 45px);
-
+.aNames{
+   width: 100%;
+   height: 100%;
+}
+.avatarNames1{
+   width: 100%;
+   text-align: center;
+   font-family: 'Pretendard-Regular';
+}
+.avatarNames1:nth-child(1){
+   height: 55%;
+   line-height: 37px;
+   border-bottom: 1px solid lightgray;
+   font-size: 12.5pt;
+}
+.avatarNames1:nth-child(2){
+   height: 45%;
+   line-height: 25px;
+   font-size: 11pt;
+}
+.avatarNames2{
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   font-family: 'Pretendard-Regular';
+   font-size: 12.5pt;
+   line-height: 65px;
+}
+.emblemst>span{
+   display: inline-block;
+   padding-left: 3px;
+   font-size: 0.75em;
+   height: 25%;
 }
 /*********************avatar**************************/

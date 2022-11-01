@@ -68,8 +68,9 @@ function CharInfos() {
             <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
-            <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span>{charStatus4.itemName ? charStatus4.itemName :""}</span>
-          </div>
+            {charStatus4 === null || charStatus4.itemName === undefined ? 
+            <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span></span></div> :
+            <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span>{charStatus4.itemName ? charStatus4.itemName :""}</span></div>}
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>
