@@ -518,6 +518,53 @@
 }
 .avatarsA>span{
    font-size: 10pt;
-   
 }
 /*********************avatar**************************/
+/*********************talisman**************************/
+.talisman_views{
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap-reverse;
+   justify-content: center;
+   align-items: center;
+   gap: 1.25rem;
+}
+.ttttttt{
+   border-radius: 2px;
+   border-top: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.35);
+   width: 48%;
+   height: 210px;
+}
+.talisman{
+   width: 100%;
+   height: 45%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Pretendard-Regular';
+}
+.talisman>img{
+   width: 40px;
+   border-radius: 4px;
+}
+.talisman>span{
+   height: 40%;
+   line-height: 50px;
+   font-weight: 600;
+   font-size: large;
+}
+.runes{
+   width: 100%;
+   height: 55%;
+}
+.runes>span{
+   display: inline-block;
+   width: 100%;
+   height: 33%;
+   line-height: 30px;
+   text-align: center;
+}
+/*********************talisman**************************/

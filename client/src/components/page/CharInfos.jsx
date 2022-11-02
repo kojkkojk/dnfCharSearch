@@ -5,6 +5,8 @@ import { serverList } from "../../configs/server";
 import Item from '../options/Item';
 import Stats from '../options/Stats';
 import Avatar from '../options/Avatar';
+import Talismans from '../options/Talismans';
+import Skillstyle from '../options/Skillstyle';
 
 function CharInfos() {
   const [searchParams] = useSearchParams();
@@ -13,6 +15,7 @@ function CharInfos() {
   const [charStatus2, setCharStatus2] = useState([]);
   const [charStatus3, setCharStatus3] = useState([]);
   const [charStatus4, setCharStatus4] = useState([]);
+  const [charStatus5, setCharStatus5] = useState([]);
   const [infos_selected, setInfos_selected] = useState("장착 아이템");
   const server = searchParams.get('server');
   const id = searchParams.get('id');
@@ -21,10 +24,11 @@ function CharInfos() {
     await axios.get("/api/char/details", { params: { serverId: serverId, characterId: characterId } }).then(res => {
       let datas = res.data;
       setCharStatus0(datas.status);
-      setCharStatus1(datas.equps)
-      setCharStatus2(datas.avatar)
-      setCharStatus3(datas.talismans)
-      setCharStatus4(datas.creature)
+      setCharStatus1(datas.equps);
+      setCharStatus2(datas.avatar);
+      setCharStatus3(datas.talismans);
+      setCharStatus4(datas.creature);
+      setCharStatus5(datas.skill)
     }).catch(err => console.log(err))
   }
   const selection2 = (arr, list) => {
@@ -59,6 +63,8 @@ function CharInfos() {
                 className='info_menus' ref={elem => (info_menusRef.current[3] = elem)}>탈리스만</li>
               <li onClick={() => { setInfos_selected("버프강화"); selection2(info_menusRef.current, info_menusRef.current[4]) }}
                 className='info_menus' ref={elem => (info_menusRef.current[4] = elem)}>버프강화</li>
+              <li onClick={() => { setInfos_selected("스킬트리"); selection2(info_menusRef.current, info_menusRef.current[5]) }}
+                className='info_menus' ref={elem => (info_menusRef.current[5] = elem)}>스킬트리</li>
             </ul>
           </div>
         </div>
@@ -68,19 +74,19 @@ function CharInfos() {
             <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
-            {charStatus4 === null || charStatus4.itemName === undefined ? 
-            <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span></span></div> :
-            <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span>{charStatus4.itemName ? charStatus4.itemName :""}</span></div>}
+            {charStatus4 === null || charStatus4.itemName === undefined ?
+              <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span></span></div> :
+              <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span>{charStatus4.itemName ? charStatus4.itemName : ""}</span></div>}
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>
-          { infos_selected === "장착 아이템" ? <Item list={charStatus1} /> :
+            {infos_selected === "장착 아이템" ? <Item list={charStatus1} /> :
             infos_selected === "스탯" ? <Stats list={charStatus0.status} /> :
             infos_selected === "아바타" ? <Avatar list={charStatus2} /> :
-            infos_selected === "탈리스만" ? "탈리스만" :
-            infos_selected === "버프강화" ? "버프강화" :
-            ""
-          }
+            infos_selected === "탈리스만" ? <Talismans list={charStatus3} /> :
+            infos_selected === "버프강화" ? "버프강화" : 
+            infos_selected === "스킬트리" ? <Skillstyle passive_Skill={charStatus5.style.passive} active_Skill={charStatus5.style.active} /> :             
+            "" }
           </div>
         </div>
       </div>

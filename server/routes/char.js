@@ -29,6 +29,8 @@ router.get("/details", async (req, res, next) => {
             .then(res => obj.creature = res.data.creature),
          axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/equip/talisman?apikey=${neoplrAPI.apiKey}`)
             .then(res => obj.talismans = res.data.talismans),
+         axios.get(`${neoplrAPI.firstURL}/servers/${charData.serverId}/characters/${charData.characterId}/skill/style?apikey=${neoplrAPI.apiKey}`)
+            .then(res => obj.skill = res.data.skill),
       ])
    } catch (error) {
       next(error)
