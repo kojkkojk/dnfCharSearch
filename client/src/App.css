@@ -568,3 +568,24 @@
    text-align: center;
 }
 /*********************talisman**************************/
+/*********************skill**************************/
+.skills{
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 5px;
+}
+.skills>div{
+   width: 100%;
+}
+.skills>div>h3{
+   width: 100%;
+   text-align: center;
+   height: 43px;
+   line-height: 40px;
+   border-radius: 2px;
+   border-top: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.35);
+}
+/*********************skill**************************/
