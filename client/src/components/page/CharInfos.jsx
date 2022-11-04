@@ -7,6 +7,7 @@ import Stats from '../options/Stats';
 import Avatar from '../options/Avatar';
 import Talismans from '../options/Talismans';
 import Skillstyle from '../options/Skillstyle';
+import Modals from '../designs/Modals';
 
 function CharInfos() {
   const [searchParams] = useSearchParams();
@@ -38,6 +39,7 @@ function CharInfos() {
   useEffect(() => {
     userDetail(server, id)
   }, [searchParams])
+
 
 
   return (
@@ -84,7 +86,7 @@ function CharInfos() {
             infos_selected === "스탯" ? <Stats list={charStatus0.status} /> :
             infos_selected === "아바타" ? <Avatar list={charStatus2} /> :
             infos_selected === "탈리스만" ? <Talismans list={charStatus3} /> :
-            infos_selected === "버프강화" ? "버프강화" : 
+            infos_selected === "버프강화" ? "" : 
             infos_selected === "스킬트리" ? <Skillstyle passive_Skill={charStatus5.style.passive} active_Skill={charStatus5.style.active} /> :             
             "" }
           </div>

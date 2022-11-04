@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fillterString } from '../../configs/fillter';
+import Modals from '../designs/Modals'
 function Item(props) {
   const list = props.list
   const lol = (arr)=>{
@@ -9,13 +10,29 @@ function Item(props) {
     });
     return a
   }
+  //itemTypeDetail itemId
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [selectItem, setSelectItem] = useState({})
+  function openModal(optins) {
+    setSelectItem(optins)
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div className='itemList'>
       {list.length > 0 ?
         list.map((data, index) => (
           <React.Fragment key={index}>
             <div className='item'>
-              <div className='itemImg'>
+              <div className='itemImg' 
+                onClick={()=>{openModal(data)}}>
                 {data.upgradeInfo ? <div className='upgradeTrue'></div> : <></>}
                 <img src={`https://img-api.neople.co.kr/df/items/${data["itemId"]}`} alt="아이템" />
                 <span>{data.slotName}</span>
@@ -42,10 +59,8 @@ function Item(props) {
                 <div className='iLevels'>
                   {!data.growInfo ? <></> : 
                   <>
-                    <div className={
-                      data.growInfo.options[0].level + data.growInfo.options[1].level + data.growInfo.options[2].level + data.growInfo.options[3].level >= 240 ?
-                      `total_grow_240 total_grow` : `total_grow total_grow_lv`}>
-                    {data.growInfo.options[0].level + data.growInfo.options[1].level + data.growInfo.options[2].level + data.growInfo.options[3].level}
+                    <div className={data.growInfo.total.level >= 240 ? `total_grow_240 total_grow` : `total_grow total_grow_lv`}>
+                    {data.growInfo.total.level}
                     </div>
                     <div className='grow_lv'>
                     {data.growInfo.options.map((optLevel, index) => (<span key={index}>{optLevel.level} </span>))}
@@ -62,6 +77,11 @@ function Item(props) {
             </div>
           </React.Fragment>
         )) : ""}
+        <Modals 
+        modalIsOpen={modalIsOpen} 
+        afterOpenModal={afterOpenModal} 
+        closeModal={closeModal} 
+        options={selectItem}/>
     </div>
   )
 }

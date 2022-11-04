@@ -1,75 +1,40 @@
-// let a = "화속성강화 30"
+let a = [
+  { level: 1, name: "백스텝", requiredLevel: 1, },
+  { level: 1, name: "암흑참", requiredLevel: 1, },
+  { level: 1, name: "퀵 스탠딩", requiredLevel: 1, },
+  { level: 1, name: "승천검", requiredLevel: 1, },
+  { level: 1, name: "회전격", requiredLevel: 10, },
+  { level: 1, name: "처단", requiredLevel: 10, },
+  { level: 1, name: "연환격", requiredLevel: 15, },
+  { level: 1, name: "양의공", requiredLevel: 15, },
+  { level: 1, name: "삼재검", requiredLevel: 15, },
+  { level: 1, name: "회륜", requiredLevel: 15, },
+  { level: 10, name: "오기조원", requiredLevel: 20, },
+  { level: 2, name: "비상", requiredLevel: 25, },
+  { level: 1, name: "일화도강", requiredLevel: 25, },
+  { level: 30, name: "극검", requiredLevel: 30, },
+  { level: 43, name: "거압", requiredLevel: 30, },
+  { level: 41, name: "비연장", requiredLevel: 35, },
+  { level: 27, name: "난화검", requiredLevel: 35, },
+  { level: 38, name: "폭검", requiredLevel: 40, },
+  { level: 38, name: "폭멸장", requiredLevel: 40, },
+  { level: 36, name: "혜성만리", requiredLevel: 45, },
+  { level: 13, name: "경전지화", requiredLevel: 50, },
+  { level: 1, name: "십자검", requiredLevel: 60, },
+  { level: 2, name: "백보신장", requiredLevel: 70, },
+  { level: 21, name: "연화검무", requiredLevel: 75, },
+  { level: 18, name: "연화섬", requiredLevel: 80, },
+  { level: 7, name: "월광비무", requiredLevel: 85, },
+  { level: 11, name: "엽해소옥", requiredLevel: 95, },
+  { level: 4, name: "월하무즉정야", requiredLevel: 100,}
+]
 
-// const fillterString = (txt)=>{
-//    let a = txt.replace("속성강화","속강");
-//    let a2 = a.replace("물리 크리티컬","물크");
-//    let a3 = a2.replace("마법 크리티컬","마크");
-//    let a4 = a3.replace("물리 공격력","물공");
-//    let a5 = a4.replace("마법 공격력","마공");
-//    let a6 = a5.replace("독립 공격력","독공");
-//    let a7 = a6.replace("모든 속성 강화","모속강");
-//    return a7
-// }
-
-// console.log(fillterString(a));
-
-
-let fc = [
-     {name: "HP", value: 115974},
-     {name: "MP", value: 107504},
-     {name: "물리 방어율", value: 21.8},
-     {name: "마법 방어율", value: 30.8},
-     {name: "힘", value: 2825},
-     {name: "지능", value: 3984},
-     {name: "체력", value: 2939},
-     {name: "정신력", value: 3349},
-     {name: "물리 공격", value: 2259},
-     {name: "마법 공격", value: 2739},
-     {name: "물리 크리티컬", value: 42},
-     {name: "마법 크리티컬", value: 100.7},
-     {name: "독립 공격", value: 2618},
-     {name: "공격 속도", value: -3},
-     {name: "캐스팅 속도", value: 75.6},
-     {name: "이동 속도", value: 29.4},
-     {name: "모험가 명성", value: 30029},
-     {name: "적중률", value: 51},
-     {name: "회피율", value: 10.5},
-     {name: "HP 회복량", value: 1147},
-     {name: "MP 회복량", value: 18957},
-     {name: "경직도", value: 0},
-     {name: "히트리커버리", value: 699},
-     {name: "화속성 강화", value: 250},
-     {name: "화속성 저항", value: 21},
-     {name: "수속성 강화", value: 248},
-     {name: "수속성 저항", value: 11},
-     {name: "명속성 강화", value: 248},
-     {name: "명속성 저항", value: 11},
-     {name: "암속성 강화", value: 250},
-     {name: "암속성 저항", value: 11},
-     {name: "물리 방어", value: 27893},
-     {name: "마법 방어", value: 44445},
-     {name: "피해 증가", value: 138275},
-     {name: "버프력", value: 0},
-     {name: "데미지 증가", value: 0},
-     {name: "크리티컬 데미지 증가", value: 0},
-     {name: "추가 데미지 증가", value: 0},
-     {name: "모든 공격력 증가", value: 0},
-     {name: "스킬 공격력 증가", value: 0},
-     {name: "물리 공격력 증가", value: 0},
-     {name: "마법 공격력 증가", value: 0},
-     {name: "독립 공격력 증가", value: 0},
-     {name: "힘 증가", value: 0},
-     {name: "지능 증가", value: 0},
-     {name: "지속피해", value: 0},
-     {name: "쿨타임 감소", value: 0}
-   ]
-
- const sds = (arr)=>{      
-   let a = ""
-   for (let i = 0; i < 16; i++) {
-      a += `<span>${arr[i].name}</span>`;
-   }
-   return a
+const asdf = (arr)=>{
+  let d = []
+  arr.forEach(element => {
+    if(element.level > 1){d.push(element)}
+  });
+  return d
 }
 
-console.log(sds(fc));
+console.log(asdf(a));

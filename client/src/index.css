@@ -56,4 +56,39 @@
 .수호자들{color: #1964ee;}
 .서클{color: #12a737;}
 .고대{color: #a5c925;}
+.각성기{color: red;}
+.opppss{
+  width: 400px;
+  height: 550px;
+}
+.opppss>.closeBtn{
+  margin-left: 375px;
+  margin-top: -15px;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  line-height: 32px;
+  font-size: 26px;
+  text-align: center;
+  color: #07a51c;
+  cursor: pointer;
+}
+.modal_item{
+  position: relative;
+  border-bottom: 1px solid black;
+  height: 70px;
+}
+.modal_item>img{
+  position: absolute;
+  width: 50px;
+}
+.modal_item>h3,
+.modal_item>h4{
+  text-align: right;
+  margin-bottom: 3px;
+  padding-right: 3px;
+}
+.modal_options{
+  
+}
 /*****************************************/
