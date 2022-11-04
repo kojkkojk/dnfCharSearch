@@ -59,7 +59,7 @@
 .각성기{color: red;}
 .opppss{
   width: 400px;
-  height: 550px;
+  min-height: 550px;
 }
 .opppss>.closeBtn{
   margin-left: 375px;
@@ -76,7 +76,8 @@
 .modal_item{
   position: relative;
   border-bottom: 1px solid black;
-  height: 70px;
+  height: 85px;
+  margin-bottom: 3px;
 }
 .modal_item>img{
   position: absolute;
@@ -89,6 +90,22 @@
   padding-right: 3px;
 }
 .modal_options{
-  
+  overflow: auto;
+  height: 465px;
+}
+.modal_options>div{
+  min-height: 115px;
+}
+.modal_options>div>div{
+  padding: 2px 0;
+}
+.modal_options>div>div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  font-size: smaller;
+}
+.modal_options>div>div:nth-child(3){
+  font-size: small;
+  font-family: 'Pretendard-Regular';
 }
 /*****************************************/

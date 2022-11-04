@@ -71,7 +71,7 @@ function Stats(props) {
          </div>
          <div className='one_step'>
             <span>{fillterString(list[17].name)}</span>
-            <span>{list[17].value}</span>
+            <span>{list[17].value}%</span>
          </div>
          <div className='one_step'>
             <span>{fillterString(list[14].name)}</span>

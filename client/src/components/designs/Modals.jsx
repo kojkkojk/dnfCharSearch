@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal';
-import {RiCloseCircleLine} from 'react-icons/ri'
+import {RiCloseCircleLine} from 'react-icons/ri';
+import parse from 'html-react-parser';
 
 const customStyles = {
    content: {
@@ -31,18 +32,19 @@ function Modals(props) {
                <img src={`https://img-api.neople.co.kr/df/items/${options.itemId}`} alt="아이템" />
                <h3>{options.itemName}</h3>
                <h4>{options.itemTypeDetail}</h4>
+               <h4 className='차원의'>{options.upgradeInfo ? `융합 - ${options.upgradeInfo.itemName}` : ""}</h4>
             </div>
             <div className='modal_options'>
                {options.growInfo ? 
                options.growInfo.options.length > 0 ?
                options.growInfo.options.map((data,index)=>(
                   <div key={index}>
-                     <h5>{index+1} 옵션 <span>Lv. {data.level}</span></h5>
-                     <p>
-                        <span>피해 증가{data.damage}</span>
-                        <span>버프력{data.buff}</span>
-                     </p>                  
-                     <span>{data.explainDetail}</span>
+                     <div><h5>{index+1} 옵션 <span className={data.level >= 60 ? "total_grow_240" : ""}>Lv. {data.level}</span></h5></div>
+                     <div>
+                        <span>- 피해 증가 {data.damage}</span>
+                        <span>- 버프력 {data.buff}</span>
+                     </div>                  
+                     <div>{parse((data.explainDetail).replace(/(?:\r\n|\r|\n)/g,"<br/>"))}</div>
                   </div>
                )) :"" :""}
             </div>
