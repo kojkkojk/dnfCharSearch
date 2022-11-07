@@ -46,7 +46,17 @@ function Modals(props) {
                      </div>                  
                      <div>{parse((data.explainDetail).replace(/(?:\r\n|\r|\n)/g,"<br/>"))}</div>
                   </div>
-               )) :"" :""}
+               )) :"" :
+               options.mythologyInfo ? 
+               options.mythologyInfo.options.length > 0 ?
+               options.mythologyInfo.options.map((data,index)=>(
+                  <div key={index}>
+                     <div><h5>{index+1} 옵션</h5></div>
+                     <div style={{fontSize:"13pt"}}>{parse((data.explainDetail).replace(/(?:\r\n|\r|\n)/g,"<br/>"))}</div>
+                  </div>
+               )) :"" 
+               
+               : ""}
             </div>
          </div>
       </Modal>
