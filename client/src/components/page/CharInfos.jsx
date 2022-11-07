@@ -7,7 +7,7 @@ import Stats from '../options/Stats';
 import Avatar from '../options/Avatar';
 import Talismans from '../options/Talismans';
 import Skillstyle from '../options/Skillstyle';
-import Modals from '../designs/Modals';
+import Buff from '../options/Buff';
 
 function CharInfos() {
   const [searchParams] = useSearchParams();
@@ -17,6 +17,7 @@ function CharInfos() {
   const [charStatus3, setCharStatus3] = useState([]);
   const [charStatus4, setCharStatus4] = useState([]);
   const [charStatus5, setCharStatus5] = useState([]);
+  const [charStatus6, setCharStatus6] = useState({});
   const [infos_selected, setInfos_selected] = useState("장착 아이템");
   const server = searchParams.get('server');
   const id = searchParams.get('id');
@@ -30,6 +31,7 @@ function CharInfos() {
       setCharStatus3(datas.talismans);
       setCharStatus4(datas.creature);
       setCharStatus5(datas.skill)
+      setCharStatus6(datas.buff)
     }).catch(err => console.log(err))
   }
   const selection2 = (arr, list) => {
@@ -76,9 +78,7 @@ function CharInfos() {
             <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
-            {charStatus4 === null || charStatus4.itemName === undefined ?
-              <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span></span></div> :
-              <div><span>크&nbsp;&nbsp;리&nbsp;&nbsp;처</span><span>{charStatus4.itemName ? charStatus4.itemName : ""}</span></div>}
+            <div><span>자&nbsp;&nbsp;버&nbsp;&nbsp;프</span><span>{charStatus6.skillInfo ? `${charStatus6.skillInfo.name} Lv.${charStatus6.skillInfo.option.level}` : ""}</span></div>
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>
@@ -86,7 +86,7 @@ function CharInfos() {
             infos_selected === "스탯" ? <Stats list={charStatus0.status} /> :
             infos_selected === "아바타" ? <Avatar list={charStatus2} /> :
             infos_selected === "탈리스만" ? <Talismans list={charStatus3} /> :
-            infos_selected === "버프강화" ? "" : 
+            infos_selected === "버프강화" ? <Buff list={charStatus6}/> : 
             infos_selected === "스킬트리" ? <Skillstyle passive_Skill={charStatus5.style.passive} active_Skill={charStatus5.style.active} /> :             
             "" }
           </div>
