@@ -5,7 +5,7 @@
 }
 .topBar{
   width: 100%;
-  height: 80px;
+  height: 50px;
   display: flex;
 }
 .dfgg_logo{
@@ -15,7 +15,33 @@
 }
 .dfgg_topmenu{
   width: 70%;
+  height: 100%;
   background-color: #3c9a83;
+}
+.dfgg_topmenu>ul{
+  list-style: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.dfgg_topmenu>ul>li{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+.dfgg_topmenu>ul>li>a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dfgg_topmenu>ul>li>a>span{
+  display: inline-block;
+  height: 100%;
 }
 .poweredByNeople{
   width: calc(30% - 240px);
@@ -27,12 +53,12 @@
 .poweredByNeople>a{
   display: inline-block;
   width: 100%;
-  height: 50%;
+  height: 60%;
   text-align: center;
 }
 .poweredByNeople>a>img{
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 /******************************************/

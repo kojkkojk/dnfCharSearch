@@ -1,8 +1,11 @@
 import './App.css';
 import Index from './components/page/Index';
 import { Routes, Route } from 'react-router-dom';
-import Topbar from './components/designs/Topbar'
+import Topbar from './components/designs/Topbar';
+import Auction from './components/page/Auction';
 import CharInfos from './components/page/CharInfos';
+
+
 function App() {
   return (
     <>
@@ -11,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Index />} />
           <Route path="/status" element={<CharInfos />} />
+          <Route path='/auction' element={<Auction/>} />
         </Routes>
       </div>
     </>

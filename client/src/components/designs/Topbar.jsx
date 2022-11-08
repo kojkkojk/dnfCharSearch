@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import {FiClipboard} from 'react-icons/fi';
+import { FiClipboard } from 'react-icons/fi';
+import { RiAuctionLine,RiSearchLine } from 'react-icons/ri';
 
 function Topbar() {
     return (
@@ -10,14 +11,14 @@ function Topbar() {
             </div>
             <div className='dfgg_topmenu'>
                 <ul>
-                    <li><FiClipboard/></li>
-                    <li></li>
-                    <li></li>
+                    <li><Link to={"/"}><RiSearchLine/><span>&nbsp;캐릭터 검색</span></Link></li>
+                    <li><Link to={"/auction"}><RiAuctionLine/><span>&nbsp;경매장 시세검색</span></Link></li>
+                    <li><FiClipboard /></li>
                 </ul>
             </div>
             <div className='poweredByNeople'>
                 <a href={"http://developers.neople.co.kr"}
-                target={"_blank"} rel="noopener noreferrer">
+                    target={"_blank"} rel="noopener noreferrer">
                     <img src="https://firebasestorage.googleapis.com/v0/b/thorarcv.appspot.com/o/poweredByneople.png?alt=media&token=cc22d16e-b2dd-45ca-b73b-ad0b42f01026" alt="Neople 오픈 API" />
                 </a>
             </div>
