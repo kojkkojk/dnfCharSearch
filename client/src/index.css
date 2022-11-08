@@ -8,21 +8,33 @@
   height: 80px;
   display: flex;
 }
-.menus{
-  width: 70%;
-  background-color: #ecd5ec;
-}
-.loginBx{
-  width: 30%;
-  background-color: aqua;
-}
-.loginBx>div{
-  display: inline-block;
-  width: 50%;
+.dfgg_logo{
+  width: 240px;
   height: 100%;
+  background-color: #12a737;
+}
+.dfgg_topmenu{
+  width: 70%;
+  background-color: #3c9a83;
+}
+.poweredByNeople{
+  width: calc(30% - 240px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.poweredByNeople>a{
+  display: inline-block;
+  width: 100%;
+  height: 50%;
   text-align: center;
 }
-
+.poweredByNeople>a>img{
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
 /******************************************/
 .lds-dual-ring {
   display: inline-block;

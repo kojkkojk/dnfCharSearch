@@ -345,6 +345,9 @@
    height: 100%;
    display: flex;
 }
+.itemName2{
+   width: calc(100% - 45px);
+}
 .iNames{
    width: 80%;
    height: 100%;

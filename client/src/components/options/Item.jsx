@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { fillterString } from '../../configs/fillter';
 import Modals from '../designs/Modals'
 function Item(props) {
+
   const list = props.list
+  const creature = props.creature
+
   const lol = (arr)=>{
     let a = "";
     arr.forEach(element => {
@@ -24,7 +27,6 @@ function Item(props) {
   function closeModal() {
     setIsOpen(false);
   }
-
   return (
     <div className='itemList'>
       {list.length > 0 ?
@@ -77,6 +79,24 @@ function Item(props) {
             </div>
           </React.Fragment>
         )) : ""}
+        {creature === null ? "" :
+        <div className='item'>
+          <div className='itemImg'>
+            <img src={`https://img-api.neople.co.kr/df/items/${creature["itemId"]}`} alt="아이템" />
+            <span>크리처</span>
+          </div>
+          <div className="itemName">
+            <div className="iNames">
+              <div className='opggisgood'>{creature.itemName}</div>
+              <div className='fowisnotgood'>
+                <span className='ech'>{creature.clone.itemId === null || creature.clone.itemId === undefined ? "" : creature.clone.itemName}</span>
+              </div>
+            </div>
+            <div className='iLevels'></div>
+          </div>
+          <div className="ref">
+          </div>
+        </div>}
         <Modals 
         modalIsOpen={modalIsOpen} 
         afterOpenModal={afterOpenModal} 

@@ -15,7 +15,7 @@ function CharInfos() {
   const [charStatus1, setCharStatus1] = useState([]);
   const [charStatus2, setCharStatus2] = useState([]);
   const [charStatus3, setCharStatus3] = useState([]);
-  const [charStatus4, setCharStatus4] = useState([]);
+  const [charStatus4, setCharStatus4] = useState(null);
   const [charStatus5, setCharStatus5] = useState([]);
   const [charStatus6, setCharStatus6] = useState({});
   const [infos_selected, setInfos_selected] = useState("장착 아이템");
@@ -82,7 +82,7 @@ function CharInfos() {
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>
-            {infos_selected === "장착 아이템" ? <Item list={charStatus1} /> :
+            {infos_selected === "장착 아이템" ? <Item list={charStatus1} creature={charStatus4}/> :
             infos_selected === "스탯" ? <Stats list={charStatus0.status} /> :
             infos_selected === "아바타" ? <Avatar list={charStatus2} /> :
             infos_selected === "탈리스만" ? <Talismans list={charStatus3} /> :

@@ -12,7 +12,7 @@ function Buff(props) {
              <img src={`https://img-api.neople.co.kr/df/items/${data["itemId"]}`} alt="아이템" />
              <span>{data.slotName}</span>
            </div>
-           <div className="itemName">
+           <div className="itemName2">
              <div className="iNames">
                <div className='opggisgood'>{data.itemName}</div>
              </div>

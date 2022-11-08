@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Charlist() {
     const charList = useSelector((state => state.charSearch.charList));
-
+    
 return (
     <div className="Charlist">
         <div className="srcn tr">
