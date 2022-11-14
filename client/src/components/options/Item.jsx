@@ -61,7 +61,9 @@ function Item(props) {
                 <div className='iLevels'>
                   {!data.growInfo ? <></> : 
                   <>
-                    <div className={data.growInfo.total.level >= 240 ? `total_grow_240 total_grow` : `total_grow total_grow_lv`}>
+                    <div className={
+                      data.growInfo.total.level >= 240 && data.growInfo.total.level <280 ? `total_grow_240 total_grow` :
+                      data.growInfo.total.level >= 280 ? `total_grow_280 total_grow` : `total_grow_lv total_grow`}>
                     {data.growInfo.total.level}
                     </div>
                     <div className='grow_lv'>
