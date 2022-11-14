@@ -629,3 +629,10 @@
    width: 80%;
    margin: auto;
 }
+.yobm{
+   width: 100%;
+   height: 70px;
+   border: 1px solid red;
+   margin-bottom: 5px;
+   display: flex;
+}
