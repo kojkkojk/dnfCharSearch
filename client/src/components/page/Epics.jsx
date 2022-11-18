@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import {setSiseList as setSiseList_redux} from '../../redux/reducer/itemSiseSlice';
-import ItemSises from './ItemSises';
 
-function Auction() {
+function Epics() {
   //itemNamed
   const dispatch = useDispatch();
   const [itemName, setItemName] = useState("")
@@ -54,10 +53,9 @@ function Auction() {
           <button onClick={check}>검색</button>
       </div>
       <div className='seght'>
-        <ItemSises/>
       </div>
     </div>
   )
 }
 
-export default Auction
+export default Epics

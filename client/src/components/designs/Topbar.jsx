@@ -7,7 +7,7 @@ function Topbar() {
     return (
         <nav className='topBar'>
             <div className='dfgg_logo'>
-                logo
+                <img src="https://firebasestorage.googleapis.com/v0/b/plogprojects.appspot.com/o/ef.png?alt=media&token=f62000c6-4bd8-4280-b004-d6c905141cc9" alt="logo" />
             </div>
             <div className='dfgg_topmenu'>
                 <ul>

@@ -1,5 +1,7 @@
+require("dotenv").config(); // 모듈 불러오기
+
 module.exports = {
-   apiKey:"uSu9qqmV6otTpjaPVgjdXccpRsWF0OeZ",
+   apiKey:process.env.apiKey,
    firstURL:"https://api.neople.co.kr/df",
    serverName:{
       anton: "안톤",

@@ -621,18 +621,83 @@
    font-family: 'Pretendard-Regular';
 }
 /*********************skill**************************/
+.auicirnmis{
+   width: 1000px;
+   margin: 15px auto;
+}
 .seght{
    width: 1000px;
    margin: auto;
 }
-.auctionSise{
+.auctionTxt{
    width: 80%;
+   margin: 0 auto;
+   border: 1px solid lightgrey;
+}
+.auctionTxt>div{
+   width: 100%;
+   text-align: center;
+   font-family:'bitbit';
+   font-size: 80px;
+}
+.auctionTxt>div>span{
+   display: inline-block;
+   width: 100px;
+   height: 100px;
+   text-align: center;
+}
+.auctionTxt>ul{
+   list-style: none;
+}
+.auctionSise{
+   width: 100%;
    margin: auto;
 }
 .yobm{
-   width: 100%;
-   height: 70px;
-   border: 1px solid red;
-   margin-bottom: 5px;
+   width: 80%;
+   margin: 0 auto;
+   height: 45px;
+   border-top: 1px solid lightgray;
+   border-left: 1px solid lightgray;
+   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.35);
+   margin-bottom: .75em;
    display: flex;
+}
+.owdsc{
+   width: 30%;
+   display: flex;
+}
+.owdsc>span:nth-child(1){
+   width: 30%;
+}
+.owdsc>span:nth-child(2){
+   width: 50%;
+}
+.owdsc>span:nth-child(3){
+   width: 20%;
+}
+.owdsc>span{
+   display: inline-block;
+   height: 100%;
+   text-align: center;
+   line-height: 40px;
+}
+.owdsc>span>img{
+   height: 90%;
+   margin-top: 2px;
+}
+.cccs{
+   width: 70%;
+   line-height: 43px;
+}
+.cccs>span{
+   display: inline-block;
+   text-align: center;
+}
+.cccs>span:nth-child(1){
+   width: 50%;
+}
+.cccs>span:nth-child(2),
+.cccs>span:nth-child(3){
+   width: 25%;
 }
