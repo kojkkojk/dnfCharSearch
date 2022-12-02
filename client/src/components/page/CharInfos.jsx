@@ -22,16 +22,16 @@ function CharInfos() {
   const server = searchParams.get('server');
   const id = searchParams.get('id');
   const info_menusRef = useRef([])
-  const userDetail = async (serverId, characterId) => {
-    await axios.get("/api/char/details", { params: { serverId: serverId, characterId: characterId } }).then(res => {
+  const userDetail = (serverId, characterId) => {
+    axios.get("/api/char/details", { params: { serverId: serverId, characterId: characterId } }).then(res => {
       let datas = res.data;
       setCharStatus0(datas.status);
       setCharStatus1(datas.equps);
       setCharStatus2(datas.avatar);
-      setCharStatus3(datas.talismans);
+      if(datas.talismans===null){setCharStatus3([])}else{setCharStatus3(datas.talismans)};
       setCharStatus4(datas.creature);
       setCharStatus5(datas.skill)
-      setCharStatus6(datas.buff)
+      if(datas.buff===null){setCharStatus6([])}else{setCharStatus6(datas.buff)}
     }).catch(err => console.log(err))
   }
   const selection2 = (arr, list) => {
@@ -51,7 +51,7 @@ function CharInfos() {
           <div className="charImg">
             <div className='yposc'>
               <span>{serverList[server]}</span>
-              <span>{charStatus0.characterName ? charStatus0.characterName : "loading.."}</span>
+              <span>{charStatus0.characterName !== undefined ? charStatus0.characterName : "loading.."}</span>
             </div>
             <img src={`https://img-api.neople.co.kr/df/servers/${server}/characters/${id}?zoom=2`} alt="char_img" />
           </div>
@@ -78,7 +78,7 @@ function CharInfos() {
             <div><span>모&nbsp;&nbsp;험&nbsp;&nbsp;단</span><span>{charStatus0.adventureName ? charStatus0.adventureName : ""}</span></div>
             <div><span>길&nbsp;&nbsp;드</span><span>{charStatus0.guildName ? charStatus0.guildName : ""}</span></div>
             <div><span>명&nbsp;&nbsp;성</span><span>{charStatus0.status ? charStatus0.status[16].value : ""}</span></div>
-            <div><span>자&nbsp;&nbsp;버&nbsp;&nbsp;프</span><span>{charStatus6.skillInfo ? `${charStatus6.skillInfo.name} Lv.${charStatus6.skillInfo.option.level}` : ""}</span></div>
+            <div><span>자&nbsp;&nbsp;버&nbsp;&nbsp;프</span><span>{charStatus6.skillInfo ? `${charStatus6.skillInfo.name} Lv.${charStatus6.skillInfo.option.level}` : ""}</span></div>    
           </div>
           <div className='selected_status_views'><h2>{infos_selected}</h2></div>
           <div className='status_views'>

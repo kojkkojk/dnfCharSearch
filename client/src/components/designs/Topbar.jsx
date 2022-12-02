@@ -13,13 +13,13 @@ function Topbar() {
                 <ul>
                     <li><Link to={"/"}><RiSearchLine/><span>&nbsp;캐릭터 검색</span></Link></li>
                     <li><Link to={"/auction"}><RiAuctionLine/><span>&nbsp;경매장 시세검색</span></Link></li>
-                    <li><FiClipboard /></li>
+                    <li><Link to={"/inchant"}><FiClipboard /><span>&nbsp;부위별 마부</span></Link></li>
                 </ul>
             </div>
             <div className='poweredByNeople'>
                 <a href={"http://developers.neople.co.kr"}
                     target={"_blank"} rel="noopener noreferrer">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/thorarcv.appspot.com/o/poweredByneople.png?alt=media&token=cc22d16e-b2dd-45ca-b73b-ad0b42f01026" alt="Neople 오픈 API" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/plogprojects.appspot.com/o/gallery%2FTech.png?alt=media&token=ca786818-53a6-4207-8f5f-a8ebe2e4f4b6" alt="Neople 오픈 API" />
                 </a>
             </div>
         </nav>

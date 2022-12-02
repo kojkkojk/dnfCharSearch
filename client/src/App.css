@@ -325,13 +325,38 @@
    position: relative;
    cursor: pointer;
 }
+
+@keyframes moveGradient {
+   0% {
+     background-position: 50% 100%;
+   }
+   50% {
+     background-position: 100% 50%;
+   }
+ } 
+
 .upgradeTrue{
    position: absolute;
    width: 45px;
    height: 45px;   
-   background-image: url("https://firebasestorage.googleapis.com/v0/b/thorarcv.appspot.com/o/siroco.gif?alt=media&token=62f73d4a-575b-4ae5-8ab2-6fc1da0085e3");
-   opacity: 0.55;
-   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   animation: moveGradient 3.25s alternate infinite;
+   background: linear-gradient(
+      65deg,
+      hsl(273, 90%, 34%),
+      hsl(273, 100%, 53%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(273, 100%, 53%),
+      hsl(273, 90%, 34%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%)
 }
 .itemImg>span{
    height: 25px;
@@ -701,3 +726,138 @@
 .cccs>span:nth-child(3){
    width: 25%;
 }
+
+/****************************/
+.containers{
+   width: 100%;
+   height: 100vh;
+   padding: 5% 8%;
+ }
+ .fecoodemmivihswwd{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .charInfo{
+   width: 50%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+ }
+ .equips{
+   display: flex;
+   width: 100%;
+   position: relative;
+ }
+ .charImgBx{
+   background-image: url("https://static.dnf-universe.com/source/2022/05/68ee13eb-4366-4de1-8faa-71ccbc12452b.png");
+   background-position: center;
+   background-size: cover;
+ }
+ .armors{
+   position: relative;
+   width: 180px;
+   padding: 5px;
+   display: flex;
+   gap: 5px;
+   flex-wrap: wrap;
+   font-family:'bitbit';
+ }
+ .accessory{
+   position: absolute;
+   right: 0;
+   width: 180px;
+   padding: 5px;
+   display: flex;
+   gap: 5px;
+   flex-wrap: wrap-reverse;
+   font-family:'bitbit';
+ }
+ .armors>.armor,.accessory>.armor{
+   z-index: 12;
+   width: 80px;
+   height: 80px;
+   background-color: rgba(255, 255, 255, 0.75);
+   text-align: center;
+   font-size: 1.25em;
+   line-height: 80px;
+   border-radius: 4px;
+ }
+ .armors>.armor,.accessory>.armor:hover{
+   cursor: pointer;
+ }
+ .charImgBx{
+   position: absolute;
+   z-index: 10;
+   width: 100%;
+   height: calc(100% - 300px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .textt{
+   color: #fff;
+   background-color: #232323;
+   padding: 1.25rem;
+   width: 100%;
+   height: 300px;
+   position: absolute;
+   bottom: 0;
+ }
+ .textt>ul{
+   list-style: none;
+ }
+ .cardInfos{
+   width: 50%;
+   height: 100%;
+   border: 1px solid #b6d;
+   padding: 1rem;
+   overflow: scroll;
+   -ms-overflow-style: none;
+ }
+ .cardInfos::-webkit-scrollbar {
+   display: none;
+ }
+ .cardInfos>h1{
+   width: 100%;
+   color: #fff;
+   text-align: center;
+   background-color: #000;
+   font-weight: 700;
+   letter-spacing: 5px;
+ }
+ .mabus{
+   min-height: 25%;
+   margin: 0.75rem 0;
+ }
+ .mabus>h2{
+   background-color: #000;
+   color: #fff;
+   text-align: center;
+ }
+ .mabus>div{
+   height: 45px;
+   margin: 0.6rem 0;
+   display: flex;
+ }
+ .mabus>div>span{
+   display: inline-block;
+   height: 100%;
+   line-height: 35pt;
+ }
+ .mabus>div>span:nth-child(1){
+   width: 45px;
+ }
+ .mabus>div>span:nth-child(2){
+   width: 50%;
+   text-align: center;
+   background-color: lightblue;
+ }
+ .mabus>div>span:nth-child(3){
+   text-align: center;
+   width: calc(50% - 45px);
+   background-color: skyblue;
+ }
