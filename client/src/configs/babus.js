@@ -72,7 +72,7 @@ export const accessory_stone = {
       {"name":"드러난 파멸의 베리아스 카드","options":["모속강 +25"],"img":"12def59b9e97ee98e941c0d6c2643b05"}
    ],
    "end":[
-      {"name":"이스핀즈 마법석 보주","options":["모속강 +30"],"img":"da4e58505a7e73cbc0f3128909263a28"},
+      {"name":"이스핀즈 마법석 보주","options":["모속강 +30"],"img":"324c1b070004c147d922ae1d03f997df"},
       {"name":"복수로 가득찬 혼돈의 악신 오즈마 보주","options":["모속강 +30"],"img":"3ed18cc4dfba7fff1d392a7465730c30"},
       {"name":"파괴하는 광룡 히스마 카드","options":["모속강 +30"],"img":"4004b372880c2e04bae60eb7bc57264a"}
    ]
