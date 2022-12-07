@@ -27,11 +27,11 @@ function Notice() {
                   <div className='trtrtr' key={index}>
                      <div>
                         <a href={data.link} target={"_blank"} rel="noopener noreferrer">
-                           <img src={data.img} width={"100%"} alt={data.title} />
+                           <img src={data.img} alt={data.title} />
                         </a>
                      </div>
                      <div>
-                        <span>{data.title}</span>
+                        <span><a href={data.link} target={"_blank"} rel="noopener noreferrer">{data.title}</a></span>
                         <span>{data.date}</span>
                      </div>
                   </div>
