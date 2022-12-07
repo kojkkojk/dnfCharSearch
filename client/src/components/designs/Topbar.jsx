@@ -14,6 +14,7 @@ function Topbar() {
                     <li><Link to={"/"}><RiSearchLine/><span>&nbsp;캐릭터 검색</span></Link></li>
                     <li><Link to={"/auction"}><RiAuctionLine/><span>&nbsp;경매장 시세검색</span></Link></li>
                     <li><Link to={"/inchant"}><FiClipboard /><span>&nbsp;부위별 마부</span></Link></li>
+                    <li><Link to={"/notice"}><FiClipboard /><span>&nbsp;던파 업데이트</span></Link></li>
                 </ul>
             </div>
             <div className='poweredByNeople'>

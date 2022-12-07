@@ -169,3 +169,27 @@
   font-family: 'Pretendard-Regular';
 }
 /*****************************************/
+.ht5949{
+  width: 100%;
+  height: 100%;
+}
+.uobpoecm223{
+  width: 1200px;
+  margin: 1.75rem auto;
+}
+.fe820dc{
+  text-align: center;
+  height: 50px;
+  line-height: 48px;
+  font-size: 25pt;
+  font-family:'bitbit';
+}
+.trtrtr{
+  width: 70%;
+  margin: 25px auto;
+  display: flex;
+  border: 1px solid red;
+}
+.trtrtr>div:nth-child(1){
+  width: 50%;
+}

@@ -2,30 +2,27 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const cheerio = require("cheerio")
+const iconv = require("iconv-lite");
 
 const url = "https://df.nexon.com/df/news/update";
-const url2 = "http://localhost:8888/";
-
 
 router.get("/", (req, res) => {
-   const getHtml = async () => {
-      try {
-         return await axios.get(url2)
-      } catch (error) {
-         if (error) throw error
-      }
-   }
-   getHtml().then(html => {
-      const $ = cheerio.load(html.data);
-      const data = $('.grd > ul > li > p').text();
-      console.log(data);
-      return data
-   }).then(data => {
-      // for (let i = 0; i < data.length; i++) {
-      //    console.log(data[i].attribs.alt);
-      // }
+   let arr = []
+   axios.get(url, { responseType: 'arraybuffer', responseEncoding: 'binary' }).then((resq) => {
+      let newArr = []
+      const content = iconv.decode(resq.data, 'euc-kr');
+      const $ = cheerio.load(content)
+      $(".update_con .grd ul li").map(function (i, element) {
+         arr[i] = {
+            'date': $(element).find('dl .date').text(),
+            'title': $(element).find('dl dt a').text(),
+            'link': url + String($(element).find('dl dt a').attr("href")),
+            'img': "https:" + String($(element).find('p a img').attr('src'))
+         }
+      });
+      newArr = arr
+      res.send(newArr)
    })
-   res.send("hi")
 })
 
 module.exports = router;
