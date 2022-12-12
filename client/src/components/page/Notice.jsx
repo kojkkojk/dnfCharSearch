@@ -5,7 +5,6 @@ function Notice() {
    const [datas, setDatas] = useState([])
    const shootApi = async () => {
       await axios.get('/api/test').then(res => {
-         console.log(res);
          let data = res.data
          if (!data) {
             alert("API 서버에 문제가 있습니다.")
@@ -36,7 +35,7 @@ function Notice() {
                      </div>
                   </div>
                ))
-               : ""}
+               : <div>던파 점검중</div>}
          </div>
       </div>
    )
